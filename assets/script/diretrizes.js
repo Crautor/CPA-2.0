@@ -9,7 +9,7 @@ async function dadoAsync(){
         divcard.classList.add("Card")
         var divnumerocard = document.createElement(`div`)
         divnumerocard.classList.add("NumeroCard")
-      
+        divnumerocard.innerText = `0${index+1}`
         var divtextocard = document.createElement(`div`)
         divtextocard.classList.add("TextoCard")
         divtextocard.style="text-align: justify"
