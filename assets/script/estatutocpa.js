@@ -3,16 +3,11 @@ async function dadoAsync(){
         method: "GET"
     });
     var minharesposta = await resposta.json();
-    console.log(minharesposta.result[0]);
-    // console.log(minharesposta.result[0].estatutoCPA);
     var estatutoCPA = document.querySelector('p.comissaoCPA')
     estatutoCPA.innerText = `${minharesposta.result[0].estatutoCPA}`
-    
     var conteudoAvaliado = document.querySelector('p.conteudoAvaliado')
     conteudoAvaliado.innerText = `${minharesposta.result[0].conteudoAvaliado}`
-
     var importanciaAvaliar = document.querySelector('p.ImportanciaDeAvaliar')
     importanciaAvaliar.innerText = `${minharesposta.result[0].importanciaAvaliar}`
-
 }
 dadoAsync();

@@ -3,21 +3,14 @@ async function dadoAsync(){
         method: "GET"
     });
     var minharesposta = await resposta.json();
-    console.log(minharesposta.result[0]);
-    
     var ul = document.querySelector("ul.slider-container")
-    console.log(minharesposta.result);
     minharesposta.result.sort((a,b)=>a.nome.localeCompare(b.nome))
     minharesposta.result.forEach((element, index) => {
-    
         var li = document.createElement("li")
-        
         var divparticipantes = document.createElement("div")
         divparticipantes.classList.add("participantes")
-
         var divcolunm1 = document.createElement("div");
         divcolunm1.classList.add("Colunm-1")
-
         var figure = document.createElement("figure");
         figure.classList.add("snip1113")
         if (index%2 ==0) {
@@ -26,36 +19,26 @@ async function dadoAsync(){
         else{
             figure.classList.add("yellow")
         }
-
         var imagem = document.createElement('img');
         imagem.src = minharesposta.result[index].imagem; 
-        
         var figcaption = document.createElement('figcaption');
-        
         var h3figcaption = document.createElement('h3')
         h3figcaption.innerHTML=`${minharesposta.result[index].nome}<span> ${minharesposta.result[index].sobrenome}</span>`
-        
         var h4figcaption = document.createElement("h4")
         h4figcaption.innerText = `${minharesposta.result[index].cargo}`
-        
         var divcolunm2 = document.createElement("div")
         divcolunm2.classList.add("Colunm-2")
-
         var divConteudoPontosTextoSubT = document.createElement("div")
         divConteudoPontosTextoSubT.classList.add("ConteudoPontosTextoSubT")
         divConteudoPontosTextoSubT.innerText=`${minharesposta.result[index].subtitulo}`
-
-
         var divComissaoSection1ConteudoDireitaTit = document.createElement("div")
         divComissaoSection1ConteudoDireitaTit.classList.add("ComissaoSection1ConteudoDireitaTit")
         divComissaoSection1ConteudoDireitaTit.classList.add("ComissaoSection1DiretorConteudoTit")
         divComissaoSection1ConteudoDireitaTit.innerText=`${minharesposta.result[index].titulo}`
-
         var divComissaoSection1ConteudoEsquerda  = document.createElement("div")
         divComissaoSection1ConteudoEsquerda.classList.add("ComissaoSection1ConteudoEsquerda")
         divComissaoSection1ConteudoEsquerda.classList.add("ComissaoSection1DiretorConteudoSub")
         divComissaoSection1ConteudoEsquerda.innerText=`${minharesposta.result[index].bio}`
-
         li.appendChild(divparticipantes)
         divparticipantes.appendChild(divcolunm1)
         divcolunm1.appendChild(figure)
@@ -70,10 +53,4 @@ async function dadoAsync(){
         ul.appendChild(li)
     })
 }
-
 dadoAsync();
-
-
-
-
-

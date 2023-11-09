@@ -4,7 +4,6 @@ async function dadoAsync(){
         method: "GET"
     });
     var minharesposta = await resposta.json();
-    console.log(minharesposta.result);
     var g1 = document.querySelector('img#g1');
     var g2 = document.querySelector('img#g2');
     var g3 = document.querySelector('img#g3');
