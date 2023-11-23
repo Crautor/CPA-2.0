@@ -16,6 +16,5 @@ async function dadoAsync(){
     l2.innerText= minharesposta.result[0].legendasatisfacaocurso;
     g3.src = minharesposta.result[0].graficosatisfacaoinfra; 
     l3.innerText= minharesposta.result[0].legendasatisfacaoinfra;
-    console.log(minharesposta.result[0]);
 }
 dadoAsync();
